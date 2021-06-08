@@ -1,6 +1,6 @@
+import 'package:latlong2/latlong.dart';
 import "package:test/test.dart";
 import 'package:geopoint/geopoint.dart';
-import 'package:latlong/latlong.dart';
 
 void main() {
   final geoPoints = <GeoPoint>[
@@ -70,8 +70,6 @@ void main() {
     expect(gs.type, GeoSerieType.polygon);
     gs = GeoSerie.fromNameAndType(name: "gs", typeStr: "group");
     expect(gs.type, GeoSerieType.group);
-    expect(() => GeoSerie.fromNameAndType(name: "gs", typeStr: null),
-        throwsA(predicate<dynamic>((dynamic e) => e is AssertionError)));
   });
 
   test("latlng", () {
